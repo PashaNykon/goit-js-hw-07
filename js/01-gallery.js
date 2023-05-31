@@ -23,7 +23,18 @@ function createGelleryItems(Items) {
 const gelleryItemsList = document.querySelector('.gallery');
 gelleryItemsList.insertAdjacentHTML('afterbegin', createGelleryItems(galleryItems)); 
 
-const onImageClick = document.querySelector('gallery__link');
-onImageClick.addEventListener('click', (event) => {
+gelleryItemsList.addEventListener('click', onClickEvent);
+
+function onClickEvent(event) {
     event.preventDefault();
-})
+    const itemOnClick = event.target;
+    if (!itemOnClick.classList.contains('gallery__image')) {
+        return;
+    }
+
+    
+    const instance = basicLightbox.create(`
+    <img src="${itemOnClick.dataset.source}" width="800" height="600">
+`)
+    instance.show()
+    }
