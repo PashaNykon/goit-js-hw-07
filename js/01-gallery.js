@@ -20,10 +20,10 @@ function createGelleryItems(Items) {
         .join('');
  }
  
-const gelleryItemsList = document.querySelector('.gallery');
-gelleryItemsList.insertAdjacentHTML('afterbegin', createGelleryItems(galleryItems)); 
+const galleryItemsList = document.querySelector('.gallery');
+galleryItemsList.insertAdjacentHTML('afterbegin', createGelleryItems(galleryItems)); 
 
-gelleryItemsList.addEventListener('click', onClickEvent);
+galleryItemsList.addEventListener('click', onClickEvent);
 
 function onClickEvent(event) {
     event.preventDefault();
